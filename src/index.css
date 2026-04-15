@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyan-vibrant: #00bcd4;
+  --color-magenta-vibrant: #e91e63;
+  --color-yellow-vibrant: #ffc107;
+  --color-black-vibrant: #263238;
+  --color-bg-vibrant: #f4f7f9;
+  --color-text-vibrant: #455a64;
+  --color-light-gray-vibrant: #e0e0e0;
+
+  --font-vibrant: "Segoe UI", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-vibrant bg-bg-vibrant text-text-vibrant;
+  }
+}
+
+.sidebar-item-active {
+  @apply bg-white/10 border-l-4 border-magenta-vibrant !text-white;
+}
+
+/* Sidebar behavior */
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 100vh;
+  }
+  
+  /* Ensure it's visible on desktop regardless of collapse state */
+  .sidebar.collapse {
+    display: block !important;
+  }
+}
+
+.stat-card-vibrant {
+  @apply bg-white p-5 rounded-xl shadow-sm border-t-4;
+}
+
+.inventory-card-vibrant {
+  @apply bg-white rounded-xl shadow-sm overflow-hidden;
+}
+
+.badge-vibrant-low {
+  @apply bg-[#ffebee] text-[#c62828] px-2 py-1 rounded text-[11px] font-bold uppercase;
+}
+
+.badge-vibrant-ok {
+  @apply bg-[#e8f5e9] text-[#2e7d32] px-2 py-1 rounded text-[11px] font-bold uppercase;
+}
+
